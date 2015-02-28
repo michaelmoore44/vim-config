@@ -1,0 +1,15 @@
+vim73
+_vimrc~
+syntax
+colors
+compiler
+doc
+ftdetect
+ftplugin
+indent
+keymap
+plugin
+vim74/
+*.swp
+l9
+fuzzyfinder

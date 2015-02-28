@@ -1,0 +1,15 @@
+[submodule "submodules/jellybeans.vim"]
+	path = submodules/jellybeans.vim
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "submodules/nerdtree"]
+	path = submodules/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "submodules/vim-airline"]
+	path = submodules/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "submodules/vim-fugitive"]
+	path = submodules/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "submodules/vim-pathogen"]
+	path = submodules/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git

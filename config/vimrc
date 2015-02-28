@@ -1,0 +1,51 @@
+
+set nocompatible
+
+
+runtime submodules/vim-pathogen/autoload/pathogen.vim
+if has('vim_starting')
+    let config=pathogen#split(&runtimepath)[0]
+    execute pathogen#infect('submodules/{}')
+endif
+
+
+
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+set tabstop=4     " a tab is four spaces
+set nowrap        " don't wrap lines
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=4  " number of spaces to use for autoindenting
+set showmatch     " set show matching parenthesis
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+set colorcolumn=80
+
+if has('gui')
+  "set guioptions-=T  " no toolbar
+  colorscheme jellybeans
+  "set lines=60 columns=108 linespace=0
+  if has('gui_win32')
+    set guifont=Anka/Coder:h10
+  else
+    set guifont=Anka/Coder\ 10
+  endif
+endif
+
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+
+
