@@ -30,6 +30,17 @@ set undolevels=1000      " use many muchos levels of undo
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
+" Allow us to switch away from an unsaved buffer
+set hidden
+
+" Highlight the entire line where the cursor is located
+set cursorline
+
+" Set up the status bar with lots of good information
+set showmode
+set showcmd
+set ruler
+
 set colorcolumn=80
 
 if has('gui')
@@ -41,6 +52,23 @@ if has('gui')
   else
     set guifont=Anka/Coder\ 10
   endif
+endif
+
+if $TERM == "linux"
+    set background=dark
+    colors elflord
+elseif has("win32") && !has("gui")
+    set background=dark
+    colors elflord
+else
+    if $COLORTERM == "gnome-terminal" || $KONSOLE_PROFILE_NAME != ""
+        set t_Co=256
+    endif
+    if $TERM == "screen"
+      set t_Co=256
+    endif
+    set background=dark
+    colors jellybeans
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
