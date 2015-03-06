@@ -13,3 +13,9 @@
 [submodule "submodules/vim-pathogen"]
 	path = submodules/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "submodules/mopkai.vim"]
+	path = submodules/mopkai.vim
+	url = https://github.com/mopp/mopkai.vim.git
+[submodule "submodules/skittles_berry"]
+	path = submodules/skittles_berry
+	url = https://github.com/shawncplus/skittles_berry.git

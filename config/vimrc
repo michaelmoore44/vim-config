@@ -15,7 +15,7 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 
 
 " change the mapleader from \ to ,
-let mapleader=","
+let mapleader = ","
 
 set tabstop=4     " a tab is four spaces
 set nowrap        " don't wrap lines
@@ -29,6 +29,23 @@ set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set visualbell           " don't beep
 set noerrorbells         " don't beep
+set showcmd              " display incomplete commands
+set incsearch            " show search matches as you type
+
+noremap <leader>o :FufCoverageFile<CR>
+noremap <leader>e :FufBuffer<CR>
+noremap <leader>t :FufTag<CR>
+noremap <leader>h :echo "leader works"<CR>
+
+
+noremap <leader>ev :e $VIM\vimfiles\config\VIMRC<CR>
+noremap <leader>sv :so $MYVIMRC<CR>
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 
 " Allow us to switch away from an unsaved buffer
 set hidden
@@ -45,7 +62,9 @@ set colorcolumn=80
 
 if has('gui')
   "set guioptions-=T  " no toolbar
-  colorscheme jellybeans
+  "colorscheme jellybeans
+  "colorscheme mopkai
+  colorscheme skittles_berry
   "set lines=60 columns=108 linespace=0
   if has('gui_win32')
     set guifont=Anka/Coder:h10
@@ -68,7 +87,8 @@ else
       set t_Co=256
     endif
     set background=dark
-    colors jellybeans
+    "colors jellybeans
+    colors mopkai
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
