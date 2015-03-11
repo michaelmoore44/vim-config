@@ -19,3 +19,6 @@
 [submodule "submodules/skittles_berry"]
 	path = submodules/skittles_berry
 	url = https://github.com/shawncplus/skittles_berry.git
+[submodule "submodules/vim-abolish"]
+	path = submodules/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git

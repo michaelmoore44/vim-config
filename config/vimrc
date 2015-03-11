@@ -31,15 +31,17 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set showcmd              " display incomplete commands
 set incsearch            " show search matches as you type
+set ignorecase           " ignore case when searching
+set hlsearch			 " search matches are highlighted
 
 noremap <leader>o :FufCoverageFile<CR>
 noremap <leader>e :FufBuffer<CR>
 noremap <leader>t :FufTag<CR>
 noremap <leader>h :echo "leader works"<CR>
 
-
 noremap <leader>ev :e $VIM\vimfiles\config\VIMRC<CR>
 noremap <leader>sv :so $MYVIMRC<CR>
+noremap <leader>w  :w<cr>
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
