@@ -5,9 +5,11 @@ Linux:
 1. In your home directory if a ".vim" directory doesn't exis, then make one.
 
 2. In your home directory, execute the command below:
+
        git clone --recursive https://github.com/michaelmoore44/vim-config.git .vim
 
 3. Create a file named .vimrc, and add the following line to the file:
+
        source ~/.vim/config/vimrc
 
 Windows:
