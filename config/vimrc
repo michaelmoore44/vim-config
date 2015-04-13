@@ -9,6 +9,9 @@ if has('vim_starting')
 endif
 
 
+let &directory=expand("<sfile>:p:h:h")."/swp"
+let &undodir=expand("<sfile>:p:h:h")."/undo"
+
 
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
@@ -59,8 +62,31 @@ set cursorline
 set showmode
 set showcmd
 set ruler
+syntax on
 
 set colorcolumn=80
+
+" Persistent undo even if vim is closed
+set undofile
+
+" Highlight spacing errors
+nnoremap <leader>f<space> /\v(\s+$)\|(<space>\ze<tab>)<CR>
+
+" Highlight tabs
+nnoremap <leader>f<Tab> /<Tab><CR>
+
+" Open vertical split and switch to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" Let us use ; instead of : for command mode
+nnoremap ; :
+
+" Some filesystems that are mounted in /tmp (particularly on OS X), cause
+" problems with backup files
+autocmd BufRead /tmp/*
+    \ setlocal nobackup |
+    \ setlocal nowritebackup
+
 
 if has('gui')
   "set guioptions-=T  " no toolbar
