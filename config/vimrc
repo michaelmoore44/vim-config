@@ -9,7 +9,6 @@ if has('vim_starting')
 endif
 
 
-let &directory=expand("<sfile>:p:h:h")."/swp"
 let &undodir=expand("<sfile>:p:h:h")."/undo"
 
 
@@ -35,7 +34,7 @@ set noerrorbells         " don't beep
 set showcmd              " display incomplete commands
 set incsearch            " show search matches as you type
 set ignorecase           " ignore case when searching
-set hlsearch			 " search matches are highlighted
+"set hlsearch			 " search matches are highlighted
 
 noremap <leader>o :FufCoverageFile<CR>
 noremap <leader>e :FufBuffer<CR>
@@ -79,7 +78,18 @@ nnoremap <leader>f<Tab> /<Tab><CR>
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Let us use ; instead of : for command mode
-nnoremap ; :
+"nnoremap ; :
+
+nnoremap <Tab> <C-o>
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
+
+
+inoremap jk <Esc>`^
+inoremap kj <Esc>`^
+vnoremap ;; <Esc>gV
 
 " Some filesystems that are mounted in /tmp (particularly on OS X), cause
 " problems with backup files
@@ -87,6 +97,29 @@ autocmd BufRead /tmp/*
     \ setlocal nobackup |
     \ setlocal nowritebackup
 
+" only for diff mode/vimdiff
+if &diff                             
+  " filler is default and inserts empty lines for sync
+  set diffopt=filler,context:1000000
+endif
+
+"Cscope stuff
+if has('cscope')
+  set cscopetag cscopeverbose
+
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  cnoreabbrev csa cs add
+  cnoreabbrev csf cs find
+  cnoreabbrev csk cs kill
+  cnoreabbrev csr cs reset
+  cnoreabbrev css cs show
+  cnoreabbrev csh cs help
+
+  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+endif
 
 if has('gui')
   "set guioptions-=T  " no toolbar
