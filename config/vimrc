@@ -17,7 +17,7 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 
 
 " change the mapleader from \ to ,
-let mapleader = ","
+let mapleader = "\<space>"
 
 set tabstop=4     " a tab is four spaces
 set nowrap        " don't wrap lines
@@ -36,14 +36,25 @@ set incsearch            " show search matches as you type
 set ignorecase           " ignore case when searching
 "set hlsearch			 " search matches are highlighted
 
-noremap <leader>o :FufCoverageFile<CR>
-noremap <leader>e :FufBuffer<CR>
-noremap <leader>t :FufTag<CR>
-noremap <leader>h :echo "leader works"<CR>
+nnoremap <leader>o :FufCoverageFile<CR>
+nnoremap <leader>e :FufBuffer<CR>
+nnoremap <leader>t :FufTag<CR>
+nnoremap <leader>h :echo "leader works"<CR>
 
-noremap <leader>ev :e $VIM\vimfiles\config\VIMRC<CR>
-noremap <leader>sv :so $MYVIMRC<CR>
-noremap <leader>w  :w<cr>
+nnoremap <leader>ev :e $VIM\vimfiles\config\VIMRC<CR>
+nnoremap <leader>sv :so $MYVIMRC<CR>
+
+"Window group
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+
+" Open vertical split and switch to it
+"nnoremap <leader>w <C-w>v<C-w>l
+
+nnoremap <silent> <CR> :nohlsearch<CR>
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -74,8 +85,6 @@ nnoremap <leader>f<space> /\v(\s+$)\|(<space>\ze<tab>)<CR>
 " Highlight tabs
 nnoremap <leader>f<Tab> /<Tab><CR>
 
-" Open vertical split and switch to it
-nnoremap <leader>w <C-w>v<C-w>l
 
 " Let us use ; instead of : for command mode
 "nnoremap ; :
