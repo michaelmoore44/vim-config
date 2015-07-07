@@ -150,15 +150,14 @@ elseif has("win32") && !has("gui")
     set background=dark
     colors elflord
 else
-    if $COLORTERM == "gnome-terminal" || $KONSOLE_PROFILE_NAME != ""
-        set t_Co=256
-    endif
+	set t_Co=256
     if $TERM == "screen"
       set t_Co=256
     endif
     set background=dark
     "colors jellybeans
-    colors mopkai
+    "colors mopkai
+  	colorscheme skittles_berry
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
