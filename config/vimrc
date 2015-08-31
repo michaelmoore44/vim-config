@@ -133,8 +133,8 @@ endif
 if has('gui')
   "set guioptions-=T  " no toolbar
   "colorscheme jellybeans
-  "colorscheme mopkai
-  colorscheme skittles_berry
+  colorscheme mopkai
+  "colorscheme skittles_berry
   "set lines=60 columns=108 linespace=0
   if has('gui_win32')
     set guifont=Anka/Coder:h10
@@ -156,8 +156,8 @@ else
     endif
     set background=dark
     "colors jellybeans
-    "colors mopkai
-  	colorscheme skittles_berry
+    colors mopkai
+  	"colorscheme skittles_berry
 endif
 
 source $VIMRUNTIME/vimrc_example.vim
