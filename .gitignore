@@ -1,5 +1,4 @@
 vim73
-_vimrc~
 syntax
 colors
 compiler
@@ -11,5 +10,6 @@ keymap
 plugin
 vim74/
 *.swp
+*~
 l9
 fuzzyfinder
