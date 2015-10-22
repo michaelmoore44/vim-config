@@ -37,3 +37,11 @@ Windows:
    At work, my home directory is on a network drive, so I need to give the
    exact path of my vimrc file because I don't want to store it on the network.
    At home, I can use a variable like $HOME in the path to my vimrc file.
+
+Add new package by navigating to the submodules directory and executing the
+   command below:
+
+   git submodule add <repo URL>
+
+Generate helptags with :Helptags
+
