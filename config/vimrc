@@ -55,12 +55,14 @@ nnoremap <leader>wl <C-w>l
 " Open vertical split and switch to it
 "nnoremap <leader>w <C-w>v<C-w>l
 
-nnoremap <silent> <CR> :nohlsearch<CR>
+nnoremap <silent> <leader><CR> :nohlsearch<CR>
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 
 " Allow us to switch away from an unsaved buffer
