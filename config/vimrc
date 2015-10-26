@@ -52,6 +52,15 @@ nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 
+"jump to definition
+nnoremap <leader>d <C-]>
+"jump back with tab
+nnoremap <Tab> <C-o>
+"go to previous edit
+
+"generate tags
+nnoremap <leader>i :!ctags -R<cr>
+
 " Open vertical split and switch to it
 "nnoremap <leader>w <C-w>v<C-w>l
 
@@ -63,6 +72,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
+
 
 
 " Allow us to switch away from an unsaved buffer
@@ -92,7 +103,6 @@ nnoremap <leader>f<Tab> /<Tab><CR>
 " Let us use ; instead of : for command mode
 "nnoremap ; :
 
-nnoremap <Tab> <C-o>
 nnoremap L $
 nnoremap H ^
 vnoremap L $
@@ -113,6 +123,18 @@ autocmd BufRead /tmp/*
 if &diff                             
   " filler is default and inserts empty lines for sync
   set diffopt=filler,context:1000000
+endif
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+"  let g:ctrlp_use_caching = 0
 endif
 
 "Cscope stuff
