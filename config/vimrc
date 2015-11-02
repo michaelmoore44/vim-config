@@ -20,11 +20,14 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 let mapleader = "\<space>"
 
 set tabstop=4     " a tab is four spaces
+set shiftwidth=4  " number of spaces to use for autoindenting
+set softtabstop=4 " spaces per tab
+set expandtab     " insert space characters when tab is pressed
+
 set nowrap        " don't wrap lines
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
-set shiftwidth=4  " number of spaces to use for autoindenting
 set showmatch     " set show matching parenthesis
 
 set history=1000         " remember more commands and search history
@@ -56,7 +59,10 @@ nnoremap <leader>wl <C-w>l
 nnoremap <leader>d <C-]>
 "jump back with tab
 nnoremap <Tab> <C-o>
-"go to previous edit
+"jump forward
+nnoremap ,<Tab> <C-i>
+"jump to last edit is g; this doesn't need a mapping since it is already easy
+"jump forward to edit is g, this doesn't need a mapping since it is already easy
 
 "generate tags
 nnoremap <leader>i :!ctags -R<cr>
@@ -72,9 +78,6 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-
-
-
 
 " Allow us to switch away from an unsaved buffer
 set hidden
@@ -107,6 +110,9 @@ nnoremap L $
 nnoremap H ^
 vnoremap L $
 vnoremap H ^
+
+vnoremap < <gv
+vnoremap > >gv
 
 
 inoremap jk <Esc>`^
