@@ -52,6 +52,10 @@ nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 
+"toggle group
+nnoremap <leader>tt :NERDTreeToggle<CR>
+"nnoremap <leader>tw :
+
 "jump to definition
 nnoremap <leader>d <C-]>
 "jump back with tab
@@ -71,7 +75,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-map <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+nnoremap <leader>f :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+nnoremap <leader>w :grep! <cword><CR> 
 
 
 
