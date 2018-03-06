@@ -1,6 +1,8 @@
 
 set nocompatible
 
+set mouse=a
+
 
 runtime submodules/vim-pathogen/autoload/pathogen.vim
 if has('vim_starting')
