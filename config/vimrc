@@ -42,6 +42,11 @@ set ignorecase           " ignore case when searching
 set smartcase            " only consider case if capital letters are used
 "set hlsearch			 " search matches are highlighted
 
+let g:NERDTreeWinPos = "right"
+
+let g:fuf_mrufile_maxItem = 1000
+let g:fuf_mrucmd_maxItem = 1000
+
 nnoremap <leader>o :FufCoverageFile<CR>
 nnoremap <leader>e :FufBuffer<CR>
 nnoremap <leader>t :FufTag<CR>

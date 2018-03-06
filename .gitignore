@@ -11,3 +11,5 @@ plugin
 vim74/
 *.swp
 *~
+
+\.netrwhist
